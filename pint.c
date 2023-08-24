@@ -1,5 +1,22 @@
 #include "monty.h"
 /**
+ * free_stack - frees doubly linked list
+ * @head: head of stack
+ * Return: void
+ */
+void free_stack(stack_t *head)
+{
+	stack_t *aux;
+
+	aux = head;
+	while (head)
+	{
+		aux = head->next;
+		free(head);
+		head = aux;
+	}
+}
+/**
  * f_pint - prints the top
  * @head: head
  * @counter: nbr
@@ -16,21 +33,4 @@ void f_pint(stack_t **head, unsigned int counter)
 		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", (*head)->n);
-}
-/**
- * free_stack - frees doubly linked list
- * @head: head of stack
- * Return: void
- */
-void free_stack(stack_t *head)
-{
-	stack_t *aux;
-
-	aux = head;
-	while (head)
-	{
-		aux = head->next;
-		free(head);
-		head = aux;
-	}
 }
