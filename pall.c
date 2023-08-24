@@ -5,7 +5,7 @@
  * @counter: counter
  * Return: void
  */
-void f_pall (stack_t **head, unsigned int counter)
+void f_pall(stack_t **head, unsigned int counter)
 {
 	stack_t *h;
 	(void)counter;
@@ -15,7 +15,7 @@ void f_pall (stack_t **head, unsigned int counter)
 		return;
 	while (h)
 	{
-		printf ("%d\n", h->n);
+		printf("%d\n", h->n);
 		h = h->next;
 	}
 }
